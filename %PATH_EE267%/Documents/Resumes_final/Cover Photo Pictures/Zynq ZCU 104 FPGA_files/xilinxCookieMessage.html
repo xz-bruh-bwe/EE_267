@@ -1,0 +1,57 @@
+
+<!-- saved from url=(0072)https://www.xilinx.com/content/dam/xilinx/cssjs/xilinxCookieMessage.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <script>
+            (function() {
+                const parentWindow = window.parent;
+                /**
+                 * Returns a cookie value if a name is specified. Otherwise returns the entire cookies as an object
+                 * @param [name] - The name of the cookie to fetch the value for. Returns the entire map of cookies if not specified
+                 * @returns {string} - The value of the cookie specified by `name` if specified. Otherwise returns an empty string.
+                 */
+                function getCookie(name) {
+                    const cookies = document.cookie.split(';')
+                        .reduce((acc, cookieString) => {
+                            const [key, value] = cookieString.split('=').map(s => s.trim());
+                            if (key && value) {
+                                acc[key] = decodeURIComponent(value);
+                            }
+                            return acc;
+                        }, {});
+                    return name ? cookies[name] || '' : cookies;
+                }
+                const message = {};
+                message.oms_sid = getCookie('oms_sid') || '';
+                if (window.self !== window.top && (message.oms_sid !== '' && message.oms_sid !== undefined)) {
+                    console.log(message)
+                    parentWindow.postMessage(message, '*')
+                }
+                else {
+                    console.log(message);
+                }
+            })();
+            
+        </script>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1275.0" data-gr-ext-installed=""><div id="my-app"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
